@@ -1,8 +1,9 @@
-FROM python:3.8-slim
+FROM python:3.9-slim
 WORKDIR /app
-COPY . /app
+COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
-CMD ["python", "Main.py"]
 EXPOSE 5000
-ENV NAME World
-CMD ["python", "Main.py"]
+ENV FLASK_APP=app.py
+ENV FLASK_ENV=production
+CMD ["flask", "run", "--host=0.0.0.0"]
+
