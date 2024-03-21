@@ -1,0 +1,4 @@
+requirements.txt 
+makefile (we make labels for complex commands)
+main.py
+.gitignore
