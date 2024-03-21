@@ -30,3 +30,6 @@ print(f'Accuracy: {accuracy:.2f}')
 
 joblib.dump(model, './gender_model.pkl')
 joblib.dump(scaler, './scaler.pkl')
+feature_names = list(features.columns)
+joblib.dump(feature_names, './feature_names.pkl')
+
