@@ -3,6 +3,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
+import joblib
 
 data = pd.read_csv('./gender.csv')
 
@@ -26,3 +27,6 @@ model.fit(X_train, y_train)
 predictions = model.predict(X_test)
 accuracy = accuracy_score(y_test, predictions)
 print(f'Accuracy: {accuracy:.2f}')
+
+joblib.dump(model, './gender_model.pkl')
+joblib.dump(scaler, './scaler.pkl')
